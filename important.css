@@ -1,0 +1,19 @@
+body { background: lime !important; }
+
+@font-face {
+    font-family: Butler;
+    src: url("Butler font.otf") format("opentype");
+}
+
+body {
+    font-family: Butler, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #4E071D;
+    text-align: center;
+    font-size: 48px;
+    margin-top: 50px;
+}
