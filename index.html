@@ -19,9 +19,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="Favicon.png?v=2">
   <link rel="icon" type="image/png" sizes="16x16" href="Favicon.png?v=2">
   <link rel="apple-touch-icon" sizes="180x180" href="Favicon.png">
-
 </head>
-
 <body>
 
   <!-- HERO SECTION WITH NAV -->
@@ -76,38 +74,27 @@
 
     // Premium follow-and-fade navbar
     const navbar = document.querySelector('.navbar');
-
-    const startTop = 24;      // starting distance from top
-    const followUntil = 120;  // navbar follows scroll until this
-    const fadeStart = 140;    // start fading
-    const fadeEnd = 260;      // fully invisible
+    const startTop = 24;
+    const followUntil = 60;
+    const fadeStart = 100;
+    const fadeEnd = 220;
 
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
+      const currentTop = parseFloat(navbar.style.top) || startTop;
+      const targetTop = scrollY <= followUntil ? startTop + scrollY : startTop + followUntil;
+      const newTop = currentTop + (targetTop - currentTop) * 0.1;
+      navbar.style.top = `${newTop}px`;
 
-      // FOLLOW PHASE
-      if (scrollY <= followUntil) {
-        navbar.style.top = `${startTop + scrollY}px`;
+      if (scrollY <= fadeStart) {
         navbar.style.opacity = '1';
         navbar.style.pointerEvents = 'auto';
-      }
-      // FADE PHASE
-      else if (scrollY > fadeStart && scrollY < fadeEnd) {
-        navbar.style.top = `${startTop + followUntil}px`;
-        const fade = 1 - (scrollY - fadeStart) / (fadeEnd - fadeStart);
-        navbar.style.opacity = fade.toString();
+      } else if (scrollY < fadeEnd) {
+        navbar.style.opacity = (1 - (scrollY - fadeStart) / (fadeEnd - fadeStart)).toString();
         navbar.style.pointerEvents = 'auto';
-      }
-      // HIDDEN
-      else if (scrollY >= fadeEnd) {
+      } else {
         navbar.style.opacity = '0';
         navbar.style.pointerEvents = 'none';
-      }
-
-      // SCROLLING BACK UP
-      if (scrollY < fadeStart) {
-        navbar.style.opacity = '1';
-        navbar.style.pointerEvents = 'auto';
       }
     });
   </script>
