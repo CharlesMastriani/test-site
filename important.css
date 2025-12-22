@@ -88,6 +88,7 @@ section {
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
+  transition: opacity 0.5s; /* <-- Add this line */
 }
 
 .logo {
@@ -125,4 +126,43 @@ section {
 
 .hero-content {
   text-align: center;
+}
+/* Hamburger styling - mobile only */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.hamburger div {
+  height: 3px;
+  background-color: #FDF6E3;
+  border-radius: 2px;
+}
+
+/* Mobile breakpoint */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #111111;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    padding: 20px;
+    border-left: 1px solid #C6A664;
+  }
+
+  .nav-links li {
+    text-align: right;
+  }
+
+  .hamburger {
+    display: flex;
+  }
 }
