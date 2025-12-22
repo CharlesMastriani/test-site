@@ -28,23 +28,29 @@ section {
 }
 
 /* =====================
-   HERO SECTION
-===================== */
+/* HERO SECTION */
 .hero {
   position: relative;
-  min-height: 90vh;
+  min-height: 70vh; /* reduced from 90vh to 70vh */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #111111;
   color: #FDF6E3;
+  padding: 40px 20px; /* optional, adds breathing room */
 }
 
 .hero h1 {
-  font-size: 64px;
+  font-size: 56px; /* slightly smaller for better proportion */
   margin-bottom: 10px;
 }
+
+.tagline {
+  font-size: 18px; /* optional smaller tagline */
+  margin-bottom: 30px;
+}
+
 
 .tagline {
   font-size: 20px;
