@@ -52,6 +52,20 @@
   <section class="status">
     <p>Website is a work in progress. Full launch coming soon.</p>
   </section>
+  <script>
+  const navbar = document.querySelector('.navbar');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.style.opacity = '0';
+      navbar.style.transition = 'opacity 0.5s';
+    } else {
+      navbar.style.opacity = '1';
+      navbar.style.transition = 'opacity 0.5s';
+    }
+  });
+</script>
+
 </body>
 
 </html>
