@@ -39,33 +39,47 @@ section {
   color: #333333;
 }
 
+/* HERO SECTION */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #111111; /* dark background behind hero */
+  color: #FDF6E3; /* cream text for h1, tagline */
+}
+
 .hero h1 {
   font-size: 64px;
   margin-bottom: 10px;
-  color: #333333; /* main hero title */
+  color: #FDF6E3; /* hero title color */
 }
 
 .tagline {
   font-size: 20px;
   margin-bottom: 40px;
   letter-spacing: 1px;
+  color: #FDF6E3;
 }
 
 /* CALL TO ACTION BUTTON */
 .cta-button {
   text-decoration: none;
   padding: 14px 36px;
-  border: 1px solid #333333;
-  color: #333333;
+  border: 1px solid #C6A664; /* gold border */
+  color: #C6A664; /* gold text */
   font-family: "PT Serif", serif;
   letter-spacing: 1px;
   transition: all 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: #333333;
-  color: #FDF6E3;
+  background-color: #C6A664;
+  color: #111111;
 }
+
 
 /* NAVBAR */
 .navbar {
