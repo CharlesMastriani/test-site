@@ -19,7 +19,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="Favicon.png?v=2">
   <link rel="icon" type="image/png" sizes="16x16" href="Favicon.png?v=2">
   <link rel="apple-touch-icon" sizes="180x180" href="Favicon.png">
-
 </head>
 <body>
 
@@ -53,9 +52,56 @@
       <img src="gallery2.jpg" alt="Car 2">
       <img src="gallery3.jpg" alt="Car 3">
       <img src="gallery4.jpg" alt="Car 4">
+      <!-- Add more images as needed -->
     </div>
   </section>
 
   <!-- Scripts -->
   <script>
-    const hamburger = document.getEleme
+    // Hamburger toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Premium follow-and-fade navbar
+    const navbar = document.querySelector('.navbar');
+
+    const startTop = 24;      // starting distance from top
+    const followUntil = 120;  // navbar follows scroll until this
+    const fadeStart = 140;    // start fading
+    const fadeEnd = 260;      // fully invisible
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+
+      // FOLLOW PHASE
+      if (scrollY <= followUntil) {
+        navbar.style.top = `${startTop + scrollY}px`;
+        navbar.style.opacity = '1';
+        navbar.style.pointerEvents = 'auto';
+      }
+      // FADE PHASE
+      else if (scrollY > fadeStart && scrollY < fadeEnd) {
+        navbar.style.top = `${startTop + followUntil}px`;
+        const fade = 1 - (scrollY - fadeStart) / (fadeEnd - fadeStart);
+        navbar.style.opacity = fade.toString();
+        navbar.style.pointerEvents = 'auto';
+      }
+      // HIDDEN
+      else if (scrollY >= fadeEnd) {
+        navbar.style.opacity = '0';
+        navbar.style.pointerEvents = 'none';
+      }
+
+      // SCROLLING BACK UP
+      if (scrollY < fadeStart) {
+        navbar.style.opacity = '1';
+        navbar.style.pointerEvents = 'auto';
+      }
+    });
+  </script>
+
+</body>
+</html>
