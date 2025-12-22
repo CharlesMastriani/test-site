@@ -1,55 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stradale Auto Club</title>
 
-    <title>Stradale Auto Club</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="important.css">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="important.css">
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="1024x1024" href="Favicon.png?v=2">
+  <link rel="icon" type="image/png" sizes="256x256" href="Favicon.png?v=2">
+  <link rel="icon" type="image/png" sizes="32x32" href="Favicon.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="Favicon.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="Favicon.png">
+</head>
+<body>
 
-    <!-- Favicons -->
-    <link rel="icon" type="image/png" sizes="1024x1024" href="Favicon.png?v=2">
-    <link rel="icon" type="image/png" sizes="256x256" href="Favicon.png?v=2">
-    <link rel="icon" type="image/png" sizes="32x32" href="Favicon.png?v=2">
-    <link rel="icon" type="image/png" sizes="16x16" href="Favicon.png?v=2">
-    <link rel="apple-touch-icon" sizes="180x180" href="Favicon.png">
-  </head>
-
-  <body>
+  <!-- HERO SECTION WITH NAV -->
   <header class="hero">
-  <nav class="navbar">
-  <div class="logo">Stradale Auto Club</div>
+    <nav class="navbar">
+      <div class="logo">Stradale Auto Club</div>
 
-  <!-- Hamburger icon -->
-  <div class="hamburger" id="hamburger">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
+      <!-- Hamburger icon -->
+      <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
 
-  <ul class="nav-links" id="nav-links">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Gallery</a></li>
-    <li><a href="#booking">Book</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-</nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#booking">Book</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
 
+    <div class="hero-content">
+      <h1>Stradale Auto Club</h1>
+      <p class="tagline">Premium Automotive Care & Detailing</p>
+      <a href="#booking" class="cta-button">Book an Appointment</a>
+    </div>
+  </header>
 
-  <div class="hero-content">
-    <h1>Stradale Auto Club</h1>
-    <p class="tagline">Premium Automotive Care & Detailing</p>
-    <a href="#booking" class="cta-button">Book an Appointment</a>
-  </div>
-</header>
-
+  <!-- ABOUT SECTION -->
   <section class="about">
     <h2>About Us</h2>
     <p>
@@ -58,23 +58,27 @@
     </p>
   </section>
 
+  <!-- STATUS SECTION -->
   <section class="status">
     <p>Website is a work in progress. Full launch coming soon.</p>
   </section>
-  <script>
-  const navbar = document.querySelector('.navbar');
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      navbar.style.opacity = '0';
+  <!-- SCRIPTS -->
+  <script>
+    // Navbar fade on scroll
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      navbar.style.opacity = window.scrollY > 50 ? '0' : '1';
       navbar.style.transition = 'opacity 0.5s';
-    } else {
-      navbar.style.opacity = '1';
-      navbar.style.transition = 'opacity 0.5s';
-    }
-  });
-</script>
+    });
+
+    // Mobile hamburger toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
 
 </body>
-
 </html>

@@ -15,12 +15,11 @@ h1, h2, h3 {
   margin-top: 0;
 }
 
-/* Heading sizes */
 h1 { font-size: 48px; }
 h2 { font-size: 36px; }
 h3 { font-size: 30px; }
 
-/* General section layout */
+/* Sections */
 section {
   max-width: 900px;
   margin: 80px auto;
@@ -30,6 +29,7 @@ section {
 
 /* HERO SECTION */
 .hero {
+  position: relative;
   min-height: 90vh;
   display: flex;
   flex-direction: column;
@@ -42,7 +42,6 @@ section {
 .hero h1 {
   font-size: 64px;
   margin-bottom: 10px;
-  color: #FDF6E3;
 }
 
 .tagline {
@@ -67,17 +66,6 @@ section {
   color: #111111;
 }
 
-/* ABOUT SECTION */
-.about p {
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-/* STATUS / FOOTER NOTE */
-.status {
-  font-size: 14px;
-  opacity: 0.7;
-}
 /* NAVBAR */
 .navbar {
   position: absolute;
@@ -88,7 +76,7 @@ section {
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  transition: opacity 0.5s; /* <-- Add this line */
+  transition: opacity 0.5s; /* fade effect */
 }
 
 .logo {
@@ -119,15 +107,19 @@ section {
   color: #C6A664;
 }
 
-/* HERO CONTENT FIX */
-.hero {
-  position: relative;
+/* ABOUT SECTION */
+.about p {
+  font-size: 18px;
+  line-height: 1.6;
 }
 
-.hero-content {
-  text-align: center;
+/* STATUS SECTION */
+.status {
+  font-size: 14px;
+  opacity: 0.7;
 }
-/* Hamburger styling - mobile only */
+
+/* HAMBURGER MENU */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -143,10 +135,9 @@ section {
   border-radius: 2px;
 }
 
-/* Mobile breakpoint */
+/* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
   .nav-links {
-    display: none;
     flex-direction: column;
     gap: 20px;
     background-color: #111111;
@@ -156,6 +147,14 @@ section {
     width: 200px;
     padding: 20px;
     border-left: 1px solid #C6A664;
+
+    /* Hidden by default using transform */
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
   }
 
   .nav-links li {
