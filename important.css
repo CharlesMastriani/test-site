@@ -168,3 +168,35 @@ section {
     display: flex;
   }
 }
+/* GALLERY PAGE */
+.gallery-hero {
+  text-align: center;
+  padding: 80px 20px 40px 20px;
+  background-color: #111111; /* dark hero style */
+  color: #FDF6E3;
+}
+
+.gallery-hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.gallery-hero p {
+  font-size: 18px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
