@@ -3,8 +3,8 @@ body {
   font-family: "Playfair Display", serif;
   margin: 0;
   padding: 0;
-  background-color: #FDF6E3; /* off-white background */
-  color: #333333; /* dark grey text */
+  background-color: #FDF6E3; /* off-white body background */
+  color: #333333; /* default dark text for sections */
 }
 
 /* Headings */
@@ -12,7 +12,7 @@ h1, h2, h3 {
   font-family: "PT Serif", serif;
   text-align: center;
   margin-top: 0;
-  color: #333333; /* default dark grey */
+  color: #333333; /* default for section headings */
 }
 
 h1 { font-size: 48px; }
@@ -35,26 +35,14 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #FDF6E3; /* off-white hero */
-  color: #333333;
-}
-
-/* HERO SECTION */
-.hero {
-  position: relative;
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #111111; /* dark background behind hero */
-  color: #FDF6E3; /* cream text for h1, tagline */
+  background-color: #111111; /* dark hero background */
+  color: #FDF6E3; /* cream text */
 }
 
 .hero h1 {
   font-size: 64px;
   margin-bottom: 10px;
-  color: #FDF6E3; /* hero title color */
+  color: #FDF6E3; /* cream hero title */
 }
 
 .tagline {
@@ -80,7 +68,6 @@ section {
   color: #111111;
 }
 
-
 /* NAVBAR */
 .navbar {
   position: absolute;
@@ -91,14 +78,15 @@ section {
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  transition: opacity 0.5s; /* fade effect */
+  transition: opacity 0.5s;
+  color: #FDF6E3; /* cream navbar text */
 }
 
 .logo {
   font-family: "PT Serif", serif;
   font-size: 20px;
   letter-spacing: 1px;
-  color: #333333;
+  color: #FDF6E3; /* cream logo */
 }
 
 .nav-links {
@@ -112,14 +100,15 @@ section {
 .nav-links a {
   text-decoration: none;
   font-family: "PT Serif", serif;
-  color: #333333;
+  color: #FDF6E3; /* cream links */
   font-size: 14px;
   letter-spacing: 1px;
   transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: #555555;
+.nav-links a:hover,
+.nav-links a:active {
+  color: #C6A664; /* gold hover/click */
 }
 
 /* ABOUT SECTION */
@@ -146,7 +135,7 @@ section {
 
 .hamburger div {
   height: 3px;
-  background-color: #333333;
+  background-color: #FDF6E3; /* cream lines */
   border-radius: 2px;
 }
 
@@ -155,15 +144,14 @@ section {
   .nav-links {
     flex-direction: column;
     gap: 20px;
-    background-color: #FDF6E3; /* matches hero for now */
+    background-color: #111111; /* dark mobile menu to match hero */
     position: absolute;
     top: 100%;
     right: 0;
     width: 200px;
     padding: 20px;
-    border-left: 1px solid #333333;
+    border-left: 1px solid #C6A664;
 
-    /* Hidden by default using transform */
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
   }
