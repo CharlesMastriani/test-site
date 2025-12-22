@@ -79,14 +79,16 @@ section {
   align-items: center;
   box-sizing: border-box;
   transition: opacity 0.5s;
-  color: #FDF6E3; /* cream navbar text */
+  background-color: #4E071D; /* burgundy navbar */
+  color: #C6A664; /* gold navbar text */
+  z-index: 1000;
 }
 
 .logo {
   font-family: "PT Serif", serif;
   font-size: 20px;
   letter-spacing: 1px;
-  color: #FDF6E3; /* cream logo */
+  color: #C6A664; /* gold logo */
 }
 
 .nav-links {
@@ -100,7 +102,7 @@ section {
 .nav-links a {
   text-decoration: none;
   font-family: "PT Serif", serif;
-  color: #FDF6E3; /* cream links */
+  color: #C6A664; /* gold links */
   font-size: 14px;
   letter-spacing: 1px;
   transition: color 0.3s ease;
@@ -108,7 +110,7 @@ section {
 
 .nav-links a:hover,
 .nav-links a:active {
-  color: #C6A664; /* gold hover/click */
+  color: #FDF6E3; /* cream on hover */
 }
 
 /* ABOUT SECTION */
@@ -135,7 +137,7 @@ section {
 
 .hamburger div {
   height: 3px;
-  background-color: #FDF6E3; /* cream lines */
+  background-color: #C6A664; /* gold hamburger lines */
   border-radius: 2px;
 }
 
@@ -144,7 +146,7 @@ section {
   .nav-links {
     flex-direction: column;
     gap: 20px;
-    background-color: #111111; /* dark mobile menu to match hero */
+    background-color: #4E071D; /* burgundy mobile menu */
     position: absolute;
     top: 100%;
     right: 0;
@@ -168,6 +170,7 @@ section {
     display: flex;
   }
 }
+
 /* GALLERY PAGE */
 .gallery-hero {
   text-align: center;
@@ -181,7 +184,6 @@ section {
   margin-bottom: 10px;
   color: #FDF6E3; /* match home page hero title color */
 }
-
 
 .gallery-hero p {
   font-size: 18px;

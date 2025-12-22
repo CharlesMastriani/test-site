@@ -25,25 +25,23 @@
 
   <!-- HERO SECTION WITH NAV -->
   <header class="hero">
-   <nav class="navbar">
-  <div class="logo">Stradale Auto Club</div>
+    <nav class="navbar">
+      <div class="logo">Stradale Auto Club</div>
 
-  <!-- Hamburger icon -->
-  <div class="hamburger" id="hamburger">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
+      <!-- Hamburger icon -->
+      <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
 
- <ul class="nav-links" id="nav-links">
-  <li><a href="index.html">Home</a></li>
-  <li><a href="gallery.html">Gallery</a></li> <!-- make sure this is exact -->
-  <li><a href="index.html#booking">Book</a></li>
-  <li><a href="#">Contact</a></li>
-</ul>
-
-</nav>
-
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="index.html#booking">Book</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
 
     <div class="hero-content">
       <h1>Stradale Auto Club</h1>
@@ -66,16 +64,13 @@
     <p>Website is a work in progress. Full launch coming soon.</p>
   </section>
 
-  <!-- SCRIPTS -->
+  <!-- Scripts -->
   <script>
-    // Navbar fade on scroll
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
-      navbar.style.opacity = window.scrollY > 50 ? '0' : '1';
-      navbar.style.transition = 'opacity 0.5s';
+      navbar.style.opacity = window.scrollY > 50 ? '0.9' : '1';
     });
 
-    // Mobile hamburger toggle
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
     hamburger.addEventListener('click', () => {
