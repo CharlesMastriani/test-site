@@ -3,16 +3,16 @@ body {
   font-family: "Playfair Display", serif;
   margin: 0;
   padding: 0;
-  background-color: #FDF6E3;
-  color: #333333;
+  background-color: #FDF6E3; /* off-white background */
+  color: #333333; /* dark grey text */
 }
 
 /* Headings */
 h1, h2, h3 {
   font-family: "PT Serif", serif;
   text-align: center;
-  color: #4E071D;
   margin-top: 0;
+  color: #333333; /* default dark grey */
 }
 
 h1 { font-size: 48px; }
@@ -35,13 +35,14 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #111111;
-  color: #FDF6E3;
+  background-color: #FDF6E3; /* off-white hero */
+  color: #333333;
 }
 
 .hero h1 {
   font-size: 64px;
   margin-bottom: 10px;
+  color: #333333; /* main hero title */
 }
 
 .tagline {
@@ -54,16 +55,16 @@ section {
 .cta-button {
   text-decoration: none;
   padding: 14px 36px;
-  border: 1px solid #C6A664;
-  color: #C6A664;
+  border: 1px solid #333333;
+  color: #333333;
   font-family: "PT Serif", serif;
   letter-spacing: 1px;
   transition: all 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: #C6A664;
-  color: #111111;
+  background-color: #333333;
+  color: #FDF6E3;
 }
 
 /* NAVBAR */
@@ -83,7 +84,7 @@ section {
   font-family: "PT Serif", serif;
   font-size: 20px;
   letter-spacing: 1px;
-  color: #FDF6E3;
+  color: #333333;
 }
 
 .nav-links {
@@ -97,14 +98,14 @@ section {
 .nav-links a {
   text-decoration: none;
   font-family: "PT Serif", serif;
-  color: #FDF6E3;
+  color: #333333;
   font-size: 14px;
   letter-spacing: 1px;
   transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #C6A664;
+  color: #555555;
 }
 
 /* ABOUT SECTION */
@@ -131,7 +132,7 @@ section {
 
 .hamburger div {
   height: 3px;
-  background-color: #FDF6E3;
+  background-color: #333333;
   border-radius: 2px;
 }
 
@@ -140,13 +141,13 @@ section {
   .nav-links {
     flex-direction: column;
     gap: 20px;
-    background-color: #111111;
+    background-color: #FDF6E3; /* matches hero for now */
     position: absolute;
     top: 100%;
     right: 0;
     width: 200px;
     padding: 20px;
-    border-left: 1px solid #C6A664;
+    border-left: 1px solid #333333;
 
     /* Hidden by default using transform */
     transform: translateX(100%);
