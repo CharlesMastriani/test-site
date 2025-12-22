@@ -1,19 +1,80 @@
+/* Base styles */
 body {
-  font-family: "Playfair Display", serif; /* Body text font */
+  font-family: "Playfair Display", serif;
   margin: 0;
   padding: 0;
   background-color: #FDF6E3;
   color: #333333;
 }
 
+/* Headings */
 h1, h2, h3 {
-  font-family: "PT Serif", serif; /* Headings font */
-  text-align: center;              /* Keep headings centered */
-  color: #4E071D;                  /* Heading color */
-  margin-top: 50px;                /* Adjust spacing */
+  font-family: "PT Serif", serif;
+  text-align: center;
+  color: #4E071D;
+  margin-top: 0;
 }
 
-/* Optional: adjust heading sizes */
+/* Heading sizes */
 h1 { font-size: 48px; }
 h2 { font-size: 36px; }
 h3 { font-size: 30px; }
+
+/* General section layout */
+section {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* HERO SECTION */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #111111;
+  color: #FDF6E3;
+}
+
+.hero h1 {
+  font-size: 64px;
+  margin-bottom: 10px;
+  color: #FDF6E3;
+}
+
+.tagline {
+  font-size: 20px;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+/* CALL TO ACTION BUTTON */
+.cta-button {
+  text-decoration: none;
+  padding: 14px 36px;
+  border: 1px solid #C6A664;
+  color: #C6A664;
+  font-family: "PT Serif", serif;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #C6A664;
+  color: #111111;
+}
+
+/* ABOUT SECTION */
+.about p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* STATUS / FOOTER NOTE */
+.status {
+  font-size: 14px;
+  opacity: 0.7;
+}
