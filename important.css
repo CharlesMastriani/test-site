@@ -42,9 +42,11 @@ section {
 }
 
 .hero h1 {
-  font-size: 56px; /* slightly smaller for better proportion */
+  font-size: 56px; /* smaller than before for a less tall hero */
   margin-bottom: 10px;
+  color: #FDF6E3; /* cream color matching the rest of the site */
 }
+
 
 .tagline {
   font-size: 18px; /* optional smaller tagline */
