@@ -34,7 +34,7 @@ section {
 .booking-hero,
 .gallery-hero {
   position: relative;
-  min-height: 70vh; /* booking hero slightly smaller before */
+  min-height: 320px; /* booking hero slightly smaller before */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -215,7 +215,8 @@ section {
 ===================== */
 .gallery-hero {
   text-align: center;
-  padding: 80px 20px 40px;
+  min-height: 320px;
+  padding: 40px 20px;
   background-color: #1F2A44; /* deep navy */
   color: #C6A664; /* gold text */
 }
