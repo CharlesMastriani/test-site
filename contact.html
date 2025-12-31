@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stradale Auto Club – Contact</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Playfair+Display:wght@400..900&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="important.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="Favicon.png">
+  <link rel="apple-touch-icon" href="Favicon.png">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">Stradale Auto Club</div>
+
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="booking.html">Book</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Contact</h1>
+      <p class="tagline">Let’s start the conversation</p>
+    </div>
+  </header>
+
+  <!-- CONTACT CONTENT -->
+  <section class="about">
+
+    <h2>Get in Touch</h2>
+    <p>
+      Whether you have a booking inquiry, partnership idea, or general question,
+      we’d be happy to hear from you.
+    </p>
+
+    <!-- EMAIL -->
+    <p style="margin-top: 30px;">
+      <strong>Email</strong><br>
+      <a href="mailto:yourbusiness@email.com" class="cta-button">
+        yourbusiness@email.com
+      </a>
+    </p>
+
+    <p class="status" style="margin-top: 10px;">
+      <!-- Replace the email above with your real business email later -->
+      Business email coming soon.
+    </p>
+
+    <!-- FORM -->
+    <div style="margin-top: 60px; max-width: 600px;">
+      <h3 style="margin-bottom: 20px;">Send a Message</h3>
+
+      <form>
+        <input
+          type="text"
+          name="name"
+          placeholder="Your name"
+          required
+          style="width: 100%; padding: 14px; margin-bottom: 16px;"
+        >
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Your email"
+          required
+          style="width: 100%; padding: 14px; margin-bottom: 16px;"
+        >
+
+        <textarea
+          name="message"
+          placeholder="Your message"
+          rows="5"
+          required
+          style="width: 100%; padding: 14px; margin-bottom: 24px;"
+        ></textarea>
+
+        <!-- This button does nothing yet -->
+        <!-- Later you can connect this to a backend or email service -->
+        <button type="submit" class="cta-button">
+          Send Message
+        </button>
+      </form>
+
+      <!-- INSTRUCTIONS:
+           To make this form functional later, connect it to:
+           - Formspree
+           - Netlify Forms
+           - A custom backend
+      -->
+    </div>
+
+    <!-- BUSINESS HOURS -->
+    <div style="margin-top: 80px;">
+      <h3>Business Hours</h3>
+      <p class="status" style="margin-top: 10px;">
+        Monday – Friday: 9:00 AM – 6:00 PM<br>
+        Saturday: By appointment only<br>
+        Sunday: Closed
+      </p>
+    </div>
+
+  </section>
+
+  <!-- SCRIPTS -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    const navbar = document.querySelector('.navbar');
+    const startTop = 24;
+    const followUntil = 60;
+    const fadeStart = 100;
+    const fadeEnd = 220;
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const currentTop = parseFloat(navbar.style.top) || startTop;
+      const targetTop = scrollY <= followUntil
+        ? startTop + scrollY
+        : startTop + followUntil;
+
+      const newTop = currentTop + (targetTop - currentTop) * 0.1;
+      navbar.style.top = `${newTop}px`;
+
+      if (scrollY <= fadeStart) {
+        navbar.style.opacity = '1';
+        navbar.style.pointerEvents = 'auto';
+      } else if (scrollY < fadeEnd) {
+        navbar.style.opacity =
+          (1 - (scrollY - fadeStart) / (fadeEnd - fadeStart)).toString();
+        navbar.style.pointerEvents = 'auto';
+      } else {
+        navbar.style.opacity = '0';
+        navbar.style.pointerEvents = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
