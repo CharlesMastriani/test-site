@@ -239,3 +239,61 @@ section {
   border-radius: 12px;
   object-fit: cover;
 }
+
+/* =====================
+   CONTACT PAGE
+===================== */
+.contact-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 260px;
+  text-align: center;
+}
+
+.contact-email {
+  color: #C6A664;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.contact-email:hover {
+  text-decoration: underline;
+}
+
+.email-note {
+  font-size: 13px;
+  opacity: 0.6;
+  margin-top: 6px;
+}
+
+.contact-form-wrapper {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 14px;
+  font-family: "PT Serif", serif;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 6px;
+  font-size: 14px;
+}
