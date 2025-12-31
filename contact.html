@@ -67,25 +67,48 @@
     </div>
 
     <!-- CONTACT FORM -->
-    <div class="contact-form-wrapper">
-      <h2>Send a Message</h2>
+<div class="contact-form-wrapper">
+  <h2>Send a Message</h2>
 
-      <form 
-  class="contact-form"
-  action="https://formspree.io/f/mnjnaynl" 
-  method="POST"
->
+  <form 
+    class="contact-form"
+    action="https://formspree.io/f/your-endpoint-here" 
+    method="POST"
+    style="max-width: 600px; margin: 0 auto; text-align: left;"
+  >
+    <!-- Spam protection -->
+    <input type="text" name="_gotcha" style="display:none">
 
-  <input type="text" name="name" placeholder="Your Name" required>
-  <input type="email" name="email" placeholder="Your Email" required>
-  <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-<input type="text" name="_gotcha" style="display:none">
+    <!-- Optional: customize email subject -->
+    <input type="hidden" name="_subject" value="New Contact Form Submission">
 
-  <button type="submit" class="booking-button">
-    Send Message
-  </button>
-</form>
-    </div>
+    <!-- Name -->
+    <label for="name">Full Name</label><br>
+    <input type="text" id="name" name="name" placeholder="Your Name" required style="width:100%; padding:10px; margin-bottom:15px;"><br>
+
+    <!-- Email -->
+    <label for="email">Email</label><br>
+    <input type="email" id="email" name="_replyto" placeholder="Your Email" required style="width:100%; padding:10px; margin-bottom:15px;"><br>
+
+    <!-- Message -->
+    <label for="message">Message</label><br>
+    <textarea id="message" name="message" placeholder="Your Message" rows="5" required style="width:100%; padding:10px; margin-bottom:20px;"></textarea><br>
+
+    <!-- Submit Button -->
+    <button type="submit" class="cta-button">
+      Send Message
+    </button>
+  </form>
+
+  <!-- Business Hours -->
+  <div style="margin-top:50px; text-align:center;">
+    <h3>Business Hours</h3>
+    <p>Monday – Friday: 9am – 6pm<br>
+       Saturday: 10am – 4pm<br>
+       Sunday: Closed</p>
+  </div>
+</div>
+
 
   </section>
 
