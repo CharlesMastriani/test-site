@@ -28,30 +28,35 @@ section {
 }
 
 /* =====================
-   HERO SECTION
+   HERO SECTIONS
 ===================== */
-.hero {
+.hero,
+.booking-hero,
+.gallery-hero {
   position: relative;
-  min-height: 70vh;
+  min-height: 70vh; /* booking hero slightly smaller before */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #1F2A44; /* deep navy */
-  color: #FDF6E3;
-  padding: 40px 20px;
+  color: #C6A664; /* gold text */
+  padding: 40px 20px; /* keeps space so navbar doesn’t overlap */
 }
 
-.hero h1 {
-  font-size: 56px; /* smaller than before for a less tall hero */
+.hero h1,
+.booking-hero h1,
+.gallery-hero h1 {
+  font-size: 56px; /* adjust as needed per page */
   margin-bottom: 10px;
-  color: #FDF6E3; /* cream color matching the rest of the site */
+  color: #C6A664; /* gold heading */
 }
 
 .tagline {
   font-size: 20px;
   margin-bottom: 40px;
   letter-spacing: 1px;
+  color: #C6A664; /* gold tagline */
 }
 
 /* =====================
@@ -211,15 +216,8 @@ section {
 .gallery-hero {
   text-align: center;
   padding: 80px 20px 40px;
-  background-color: #111111;
-  color: #FDF6E3;
-}
-
-.gallery-hero {
-  text-align: center;
-  padding: 80px 20px 40px;
   background-color: #1F2A44; /* deep navy */
-  color: #FDF6E3;
+  color: #C6A664; /* gold text */
 }
 
 .gallery-hero p {
@@ -240,33 +238,4 @@ section {
   height: auto;
   border-radius: 12px;
   object-fit: cover;
-}
-
-.hero,
-.booking-hero,
-.gallery-hero {
-  position: relative;
-  min-height: 70vh; /* booking hero was smaller before */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #1F2A44; /* deep navy */
-  color: #FDF6E3; /* cream text */
-  padding: 40px 20px; /* keeps space so navbar doesn’t overlap */
-}
-
-.hero h1,
-.booking-hero h1,
-.gallery-hero h1 {
-  font-size: 56px; /* adjust as needed per page */
-  margin-bottom: 10px;
-  color: #FFFFFF; /* ensures heading is fully readable */
-}
-
-.tagline {
-  font-size: 20px;
-  margin-bottom: 40px;
-  letter-spacing: 1px;
-  color: #FDF6E3; /* ensures tagline contrasts with navy background */
 }
