@@ -13,19 +13,16 @@
   <!-- CSS -->
   <link rel="stylesheet" href="important.css">
 
-  <!-- Favicons -->
-  <link rel="icon" type="image/png" sizes="1024x1024" href="Favicon.png?v=2">
-  <link rel="icon" type="image/png" sizes="256x256" href="Favicon.png?v=2">
-  <link rel="icon" type="image/png" sizes="32x32" href="Favicon.png?v=2">
-  <link rel="icon" type="image/png" sizes="16x16" href="Favicon.png?v=2">
-  <link rel="apple-touch-icon" sizes="180x180" href="Favicon.png">
+  <!-- Favicon -->
+  <link rel="icon" href="Favicon.png" type="image/png">
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="logo">Stradale Auto Club</div>
 
+    <!-- Hamburger icon -->
     <div class="hamburger" id="hamburger">
       <div></div>
       <div></div>
@@ -35,28 +32,30 @@
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="index.html#booking">Book</a></li>
+      <li><a href="booking.html">Book</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- Gallery Section -->
+  <!-- GALLERY HERO SECTION -->
   <header class="gallery-hero">
-    <h1>Gallery</h1>
-    <p>Check out some of our premium auto services and cars</p>
+    <div class="hero-content">
+      <h1>Gallery</h1>
+      <p class="tagline">Explore our premium auto services and craftsmanship</p>
+    </div>
   </header>
 
-  <section class="gallery">
-    <div class="gallery-grid">
-      <img src="gallery1.jpg" alt="Car 1">
-      <img src="gallery2.jpg" alt="Car 2">
-      <img src="gallery3.jpg" alt="Car 3">
-      <img src="gallery4.jpg" alt="Car 4">
-      <!-- Add more images as needed -->
-    </div>
+  <!-- GALLERY GRID -->
+  <section class="gallery-grid">
+    <img src="images/car1.jpg" alt="Car 1">
+    <img src="images/car2.jpg" alt="Car 2">
+    <img src="images/car3.jpg" alt="Car 3">
+    <img src="images/car4.jpg" alt="Car 4">
+    <img src="images/car5.jpg" alt="Car 5">
+    <img src="images/car6.jpg" alt="Car 6">
   </section>
 
-  <!-- Scripts -->
+  <!-- SCRIPTS -->
   <script>
     // Hamburger toggle
     const hamburger = document.getElementById('hamburger');
@@ -74,6 +73,15 @@
 
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
+
+      // Fix navbar at start
+      if (scrollY === 0) {
+        navbar.style.top = `${startTop}px`;
+        navbar.style.opacity = '1';
+        navbar.style.pointerEvents = 'auto';
+        return;
+      }
+
       const currentTop = parseFloat(navbar.style.top) || startTop;
       const targetTop = scrollY <= followUntil ? startTop + scrollY : startTop + followUntil;
       const newTop = currentTop + (targetTop - currentTop) * 0.1;
