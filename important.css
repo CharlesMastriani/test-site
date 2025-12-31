@@ -28,7 +28,8 @@ section {
 }
 
 /* =====================
-/* HERO SECTION */
+   HERO SECTION
+===================== */
 .hero {
   position: relative;
   min-height: 70vh; /* reduced from 90vh to 70vh */
@@ -47,17 +48,18 @@ section {
   color: #FDF6E3; /* cream color matching the rest of the site */
 }
 
-
-.tagline {
-  font-size: 18px; /* optional smaller tagline */
-  margin-bottom: 30px;
-}
-
-
 .tagline {
   font-size: 20px;
   margin-bottom: 40px;
   letter-spacing: 1px;
+}
+
+/* =====================
+   BOOKING HERO ADJUSTMENTS
+===================== */
+.booking-hero {
+  padding: 60px 20px; /* smaller hero padding for booking page */
+  min-height: 50vh;   /* reduced height */
 }
 
 /* =====================
@@ -76,6 +78,21 @@ section {
 .cta-button:hover {
   background-color: #C6A664;
   color: #111111;
+}
+
+/* =====================
+   BOOKING BUTTON COLOR
+===================== */
+.booking-button {
+  background-color: #C6A664; /* gold by default */
+  color: #111111;
+  border: 1px solid #C6A664;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.booking-button:hover {
+  background-color: #4E071D; /* same as navbar */
+  color: #FDF6E3; /* cream text on hover */
 }
 
 /* =====================
