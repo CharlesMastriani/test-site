@@ -32,14 +32,14 @@ section {
 ===================== */
 .hero {
   position: relative;
-  min-height: 70vh; /* reduced from 90vh to 70vh */
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #111111;
+  background-color: #1F2A44; /* deep navy */
   color: #FDF6E3;
-  padding: 40px 20px; /* optional, adds breathing room */
+  padding: 40px 20px;
 }
 
 .hero h1 {
@@ -52,14 +52,6 @@ section {
   font-size: 20px;
   margin-bottom: 40px;
   letter-spacing: 1px;
-}
-
-/* =====================
-   BOOKING HERO ADJUSTMENTS
-===================== */
-.booking-hero {
-  padding: 60px 20px; /* smaller hero padding for booking page */
-  min-height: 50vh;   /* reduced height */
 }
 
 /* =====================
@@ -223,10 +215,11 @@ section {
   color: #FDF6E3;
 }
 
-.gallery-hero h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
-  color: #FFFFFF;
+.gallery-hero {
+  text-align: center;
+  padding: 80px 20px 40px;
+  background-color: #1F2A44; /* deep navy */
+  color: #FDF6E3;
 }
 
 .gallery-hero p {
@@ -247,4 +240,33 @@ section {
   height: auto;
   border-radius: 12px;
   object-fit: cover;
+}
+
+.hero,
+.booking-hero,
+.gallery-hero {
+  position: relative;
+  min-height: 70vh; /* booking hero was smaller before */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1F2A44; /* deep navy */
+  color: #FDF6E3; /* cream text */
+  padding: 40px 20px; /* keeps space so navbar doesn’t overlap */
+}
+
+.hero h1,
+.booking-hero h1,
+.gallery-hero h1 {
+  font-size: 56px; /* adjust as needed per page */
+  margin-bottom: 10px;
+  color: #FFFFFF; /* ensures heading is fully readable */
+}
+
+.tagline {
+  font-size: 20px;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  color: #FDF6E3; /* ensures tagline contrasts with navy background */
 }
