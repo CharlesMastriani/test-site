@@ -122,30 +122,35 @@
     navLinks.classList.toggle('active');
   });
 
-  // Smooth gliding navbar
+  // Smooth gliding navbar using requestAnimationFrame
   const navbar = document.querySelector('.navbar');
-  const startTop = 24; // starting offset from top
+  const startTop = 24; // initial top offset
   let currentTop = startTop;
 
-  window.addEventListener('scroll', () => {
+  function updateNavbar() {
     const scrollY = window.scrollY;
-    const targetTop = startTop + scrollY; // navbar follows scroll
+    const targetTop = startTop + scrollY;
 
-    // Glide effect using linear interpolation
-    currentTop += (targetTop - currentTop) * 0.1;
+    // Glide effect (larger factor for faster catch-up)
+    currentTop += (targetTop - currentTop) * 0.25; 
     navbar.style.top = `${currentTop}px`;
-  });
+
+    requestAnimationFrame(updateNavbar);
+  }
+
+  requestAnimationFrame(updateNavbar);
 
   // Smooth scroll to top when logo clicked
   const logoLink = document.querySelector('.navbar-logo');
   logoLink.addEventListener('click', function(e) {
-    e.preventDefault(); // prevent default jump
+    e.preventDefault();
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
   });
 </script>
+
 
 
 </body>
