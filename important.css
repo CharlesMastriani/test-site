@@ -297,3 +297,32 @@ section {
   border-radius: 6px;
   font-size: 14px;
 }
+/* =====================
+   NAVBAR LOGO UPDATES
+===================== */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit; /* inherit the current navbar text color */
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.navbar-logo .logo {
+  width: 40px;        /* adjust size as needed */
+  height: 40px;
+  margin-right: 10px; /* space between logo and text */
+}
+
+/* Optional hover effect for logo */
+.navbar-logo:hover {
+  opacity: 0.8;
+}
+
+/* =====================
+   SMOOTH SCROLL
+===================== */
+html {
+  scroll-behavior: smooth;
+}
