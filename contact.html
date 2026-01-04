@@ -114,6 +114,38 @@
 
 
   </section>
+<script>
+  // Hamburger toggle
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  // Smooth gliding navbar
+  const navbar = document.querySelector('.navbar');
+  const startTop = 24; // starting top offset
+  let currentTop = startTop;
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const targetTop = startTop + scrollY; // navbar follows scroll
+
+    // Linear interpolation for smooth glide
+    currentTop += (targetTop - currentTop) * 0.1;
+    navbar.style.top = `${currentTop}px`;
+  });
+
+  // Smooth scroll to top when logo clicked
+  const logoLink = document.querySelector('.navbar-logo');
+  logoLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
 
 </body>
 </html>

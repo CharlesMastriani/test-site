@@ -68,39 +68,38 @@
 
   <!-- Scripts -->
   <script>
-    // Hamburger toggle
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
+  // Hamburger toggle
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  // Smooth gliding navbar
+  const navbar = document.querySelector('.navbar');
+  const startTop = 24; // starting top offset
+  let currentTop = startTop;
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const targetTop = startTop + scrollY; // navbar follows scroll
+
+    // Linear interpolation for smooth glide
+    currentTop += (targetTop - currentTop) * 0.1;
+    navbar.style.top = `${currentTop}px`;
+  });
+
+  // Smooth scroll to top when logo clicked
+  const logoLink = document.querySelector('.navbar-logo');
+  logoLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
     });
+  });
+</script>
 
-    // Premium follow-and-fade navbar
-    const navbar = document.querySelector('.navbar');
-    const startTop = 24;
-    const followUntil = 60;
-    const fadeStart = 100;
-    const fadeEnd = 220;
-
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      const currentTop = parseFloat(navbar.style.top) || startTop;
-      const targetTop = scrollY <= followUntil ? startTop + scrollY : startTop + followUntil;
-      const newTop = currentTop + (targetTop - currentTop) * 0.1;
-      navbar.style.top = `${newTop}px`;
-
-      if (scrollY <= fadeStart) {
-        navbar.style.opacity = '1';
-        navbar.style.pointerEvents = 'auto';
-      } else if (scrollY < fadeEnd) {
-        navbar.style.opacity = (1 - (scrollY - fadeStart) / (fadeEnd - fadeStart)).toString();
-        navbar.style.pointerEvents = 'auto';
-      } else {
-        navbar.style.opacity = '0';
-        navbar.style.pointerEvents = 'none';
-      }
-    });
-  </script>
 
 </body>
 </html>
