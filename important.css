@@ -169,10 +169,30 @@ section {
 /* =====================
    ABOUT + STATUS
 ===================== */
-.about p {
-  font-size: 18px;
-  line-height: 1.6;
+/* =====================
+   ABOUT SECTION (WINE RED)
+===================== */
+.about {
+  background-color: #4E071D; /* wine red */
+  color: #C6A664; /* gold text */
+  padding: 100px 20px;
+  border-radius: 24px;
+  text-align: center;
 }
+
+.about h2 {
+  color: #C6A664;
+  margin-bottom: 24px;
+}
+
+.about p {
+  color: #FDF6E3; /* soft cream for readability */
+  max-width: 720px;
+  margin: 0 auto 20px;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
 
 .status {
   font-size: 14px;
