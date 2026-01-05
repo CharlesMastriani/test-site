@@ -110,10 +110,40 @@
       behavior: 'smooth'
     });
   });
+  // Gallery click-to-expand modal
+const modal = document.getElementById('imageModal');
+const modalImg = document.getElementById('modalImage');
+const modalClose = document.getElementById('modalClose');
+
+document.querySelectorAll('.gallery-grid img').forEach(img => {
+  img.addEventListener('click', () => {
+    modal.classList.add('active');
+    modalImg.src = img.src;
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+modalClose.addEventListener('click', closeModal);
+modal.addEventListener('click', e => {
+  if (e.target === modal) closeModal();
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+});
+
+function closeModal() {
+  modal.classList.remove('active');
+  modalImg.src = '';
+  document.body.style.overflow = '';
+}
+
 </script>
-
-
-
+<!-- IMAGE MODAL -->
+<div class="image-modal" id="imageModal">
+  <span class="modal-close" id="modalClose">&times;</span>
+  <img class="modal-content" id="modalImage" alt="Expanded gallery image">
+</div>
 
 </body>
 </html>
