@@ -63,15 +63,20 @@ if (modal && modalImg && modalClose) {
     document.body.style.overflow = '';
   }
 
+  // Close X
   modalClose.addEventListener('click', closeModal);
+
+  // Click outside content wrapper
   modal.addEventListener('click', e => {
     if (e.target === modal) closeModal();
   });
 
+  // Escape key
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeModal();
   });
 }
+
 
 // ===== Booking Form Submission (if present) =====
 const bookingForm = document.getElementById('booking-form');
