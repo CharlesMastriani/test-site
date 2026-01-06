@@ -89,3 +89,20 @@ if (bookingForm) {
     bookingForm.reset();
   });
 }
+// ===== Booking Service Price Update =====
+const serviceSelect = document.getElementById('service');
+const priceValue = document.getElementById('service-price-value');
+
+if (serviceSelect && priceValue) {
+  const servicePrices = {
+    'hand-wash': '$35',
+    'detailing': 'Coming Soon',
+    'vehicle-service': 'Coming Soon',
+    'modifications': 'Coming Soon'
+  };
+
+  serviceSelect.addEventListener('change', () => {
+    const selectedService = serviceSelect.value;
+    priceValue.textContent = servicePrices[selectedService] || '—';
+  });
+}

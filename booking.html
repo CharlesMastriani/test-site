@@ -62,13 +62,21 @@
       <input type="email" id="email" name="email" placeholder="Your email address" required style="width:100%; padding:10px; margin-bottom:15px;"><br>
 
       <!-- Service Type -->
-      <label for="service">Select Service</label><br>
-      <select id="service" name="service" required style="width:100%; padding:10px; margin-bottom:15px;">
-        <option value="" disabled selected>Select a service</option>
-        <option value="Hand Wash">Hand Wash</option>
-        <option value="Full Detail">Full Detail</option>
-        <option value="Vehicle Service">Vehicle Service</option>
-        <option value="Modifications">Modifications</option>
+<label for="service">Select Service</label><br>
+<select id="service" name="service" required style="width:100%; padding:10px; margin-bottom:10px;">
+  <option value="" disabled selected>Select a service</option>
+  <option value="hand-wash">Premium Hand Wash</option>
+  <option value="detailing">Full Detail</option>
+  <option value="vehicle-service">Vehicle Service</option>
+  <option value="modifications">Modifications</option>
+</select><br>
+
+<!-- Service Price Display -->
+<div id="service-price-box" class="service-price">
+  <strong>Service Price:</strong>
+  <span id="service-price-value">—</span>
+</div>
+
       </select><br>
 
       <!-- Preferred Date -->
