@@ -88,54 +88,8 @@
   </section>
 
   <!-- SCRIPTS -->
- <script>
-  // Hamburger toggle
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('nav-links');
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
 
-  // Smooth gliding navbar using requestAnimationFrame
-  const navbar = document.querySelector('.navbar');
-  const startTop = 24; // initial top offset
-  let currentTop = startTop;
-
-  function updateNavbar() {
-    const scrollY = window.scrollY;
-    const targetTop = startTop + scrollY;
-
-    // Glide effect (larger factor for faster catch-up)
-    currentTop += (targetTop - currentTop) * 0.25; 
-    navbar.style.top = `${currentTop}px`;
-
-    requestAnimationFrame(updateNavbar);
-  }
-
-  requestAnimationFrame(updateNavbar);
-
-  // Smooth scroll to top when logo clicked
-  const logoLink = document.querySelector('.navbar-logo');
-  logoLink.addEventListener('click', function(e) {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
-</script>
-
-
-
-    });
-
-    // Optional: handle form submission (demo)
-    document.getElementById('booking-form').addEventListener('submit', function(e){
-      e.preventDefault();
-      alert('Booking submitted! We will contact you soon.');
-      this.reset();
-    });
-  </script>
+  <script src="script.js"></script>
 
 </body>
 </html>
