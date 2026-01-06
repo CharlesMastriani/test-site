@@ -554,11 +554,44 @@ html {
   cursor: pointer;
   z-index: 10;
 }
-.service-price {
-  margin-bottom: 20px;
-  padding: 14px 16px;
-  background: #f5f1e6;
-  border-radius: 8px;
-  font-size: 1rem;
-  color: #111;
+/* Improve internal spacing */
+.service-card h2 {
+  margin-bottom: 12px;
 }
+
+.service-card p {
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* Price box styling */
+.service-price {
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+}
+
+/* Price text */
+.service-price span {
+  display: block;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  color: #e6dcc8; /* cream accent */
+}
+
+/* Dollar amount emphasis */
+.service-price strong {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-top: 6px;
+  display: block;
+}
+
+/* Coming soon styling */
+.service-price.coming-soon strong {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  opacity: 0.75;
+}
+
