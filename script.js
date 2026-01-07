@@ -90,7 +90,6 @@ if (bookingForm) {
   });
 }
 // ===== Booking Service Price Logic =====
-const serviceSelect = document.getElementById('service');
 const priceDisplay = document.getElementById('service-price');
 
 if (serviceSelect && priceDisplay) {
@@ -106,4 +105,17 @@ if (serviceSelect && priceDisplay) {
     priceDisplay.textContent = servicePrices[selectedService] || "—";
   });
 }
+const serviceSelect = document.getElementById('service');
+const priceBox = document.getElementById('service-price');
 
+if (serviceSelect && priceBox) {
+  serviceSelect.addEventListener('change', () => {
+    let serviceText = '';
+    if (serviceSelect.value === 'Hand Wash') {
+      serviceText = `Premium Hand Wash <span class="price-number">$35</span>`;
+    } else {
+      serviceText = `${serviceSelect.value} <span class="price-number">Coming Soon</span>`;
+    }
+    priceBox.innerHTML = serviceText;
+  });
+}
