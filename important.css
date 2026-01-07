@@ -594,4 +594,50 @@ html {
   letter-spacing: 1px;
   opacity: 0.75;
 }
+/* Bottom booking area */
+.booking-footer {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
 
+/* Price alignment near CTA */
+.booking-footer .service-price {
+  text-align: left;
+  padding: 0;
+  border: none;
+}
+
+/* Price typography refinement */
+.booking-footer .service-price span {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.booking-footer .service-price strong {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #e6dcc8;
+}
+
+/* Button polish (if not already styled) */
+.booking-btn {
+  padding: 14px 26px;
+  border-radius: 10px;
+  background: #e6dcc8;
+  color: #111;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.booking-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
