@@ -821,27 +821,32 @@ html {
   outline: none;           /* remove default focus outline */
 }
 .instagram-section {
-    background-color: #4E071D; /* wine-red background */
+    background-color: #4E071D;  /* wine-red background */
     text-align: center;
     padding: 60px 20px;
+    border-radius: 25px;        /* rounded corners */
+    max-width: 600px;           /* optional: constrain width for elegance */
+    margin: 40px auto;           /* center section horizontally */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* subtle shadow for depth */
 }
 
 .instagram-section h2 {
-    color: #D4AF37; /* gold heading */
+    color: #C6A664;             /* gold heading */
     font-size: 28px;
     margin-bottom: 25px;
-    font-family: 'Georgia', serif;
+    font-family: 'Georgia', serif;  /* elegant font */
     font-weight: 500;
 }
 
 .instagram-link svg {
-    width: 40px;  /* appropriately small */
+    width: 40px;                 /* appropriate size */
     height: 40px;
-    fill: #D4AF37; /* gold icon */
+    fill: #C6A664;               /* gold icon */
     transition: fill 0.2s ease, transform 0.2s ease;
 }
 
 .instagram-link:hover svg {
-    fill: #fff;        /* hover color */
-    transform: scale(1.2); /* subtle zoom on hover */
+    fill: #fff;                  /* hover color */
+    transform: scale(1.2);       /* subtle zoom effect */
 }
+
