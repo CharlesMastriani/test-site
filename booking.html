@@ -15,6 +15,54 @@
 
   <!-- Favicon -->
   <link rel="icon" href="Favicon.png" type="image/png">
+
+  <style>
+    /* Price box styling */
+    #service-price {
+      display: inline-block;
+      padding: 12px 32px;
+      margin: 30px 0 20px;
+      background-color: #f7f3ec;
+      border: 1px solid #e0d8c8;
+      border-radius: 50px; /* pill shape */
+      text-align: center;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #333;
+      min-width: 200px;
+    }
+
+    /* Vertical spacing for form fields */
+    #booking-form label {
+      display: block;
+      margin-top: 20px;
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-family: 'PT Serif', serif;
+      font-size: 16px;
+    }
+
+    #booking-form input,
+    #booking-form select,
+    #booking-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-family: 'PT Serif', serif;
+      font-size: 16px;
+    }
+
+    /* Submit button centered and nicely spaced */
+    #booking-form .cta-button.booking-button {
+      margin-top: 20px;
+      padding: 14px 40px;
+      font-size: 18px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
@@ -50,7 +98,7 @@
 <section class="about">
   <h2>Booking Form</h2>
 
-  <form id="booking-form" style="max-width:600px;margin:0 auto;">
+  <form id="booking-form" style="max-width: 600px; margin: 0 auto;">
 
     <!-- Name -->
     <label for="name">Full Name</label>
@@ -71,16 +119,7 @@
     </select>
 
     <!-- Service Price -->
-    <div id="service-price"
-         style="
-           margin:30px 0 20px;
-           padding:18px;
-           background:#f7f3ec;
-           border:1px solid #e0d8c8;
-           text-align:center;
-           font-family:'Playfair Display', serif;
-           font-size:18px;
-         ">
+    <div id="service-price">
       Select a service to see pricing
     </div>
 
@@ -96,8 +135,8 @@
     <label for="notes">Additional Notes</label>
     <textarea id="notes" name="notes" rows="4" placeholder="Any special requests?"></textarea>
 
-    <!-- Submit -->
-    <div style="text-align:center;margin-top:30px;">
+    <!-- Submit Button -->
+    <div style="text-align:center;">
       <button type="submit" class="cta-button booking-button">
         Submit Booking
       </button>
