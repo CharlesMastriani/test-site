@@ -800,3 +800,23 @@ html {
 .booking-button:hover {
   background-color: #800020; /* wine-red */
 }
+/* Make select box same width as other inputs */
+#service {
+  width: 100%;          /* full width of its container */
+  padding: 10px 15px;   /* comfortable padding */
+  font-size: 16px;      /* readable font */
+  border: 1px solid #ccc;  /* subtle border */
+  border-radius: 8px;      /* rounded corners for elegance */
+  background-color: #fff;   /* white background */
+  appearance: none;        /* remove default OS styling */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* subtle shadow */
+  transition: all 0.2s ease; /* smooth hover/focus effect */
+}
+
+/* Optional: hover and focus states for nicer interaction */
+#service:hover,
+#service:focus {
+  border-color: #C6A664;   /* your gold color for focus */
+  box-shadow: 0 2px 8px rgba(198,166,100,0.3);
+  outline: none;           /* remove default focus outline */
+}
