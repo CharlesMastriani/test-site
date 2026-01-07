@@ -8,7 +8,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="important.css">
@@ -18,16 +18,15 @@
 </head>
 <body>
 
- <nav class="navbar">
+<!-- NAVBAR -->
+<nav class="navbar">
   <a href="#" class="navbar-logo">
     <img src="Favicon.png" alt="Stradale Auto Club Logo" class="logo">
     Stradale Auto Club
   </a>
 
   <div class="hamburger" id="hamburger">
-    <div></div>
-    <div></div>
-    <div></div>
+    <div></div><div></div><div></div>
   </div>
 
   <ul class="nav-links" id="nav-links">
@@ -35,79 +34,80 @@
     <li><a href="gallery.html">Gallery</a></li>
     <li><a href="booking.html">Book</a></li>
     <li><a href="contact.html">Contact</a></li>
-     <li><a href="our-services.html">Our Services</a></li>
+    <li><a href="our-services.html">Our Services</a></li>
   </ul>
 </nav>
 
-
-  <!-- HERO SECTION -->
-  <header class="hero booking-hero">
+<!-- HERO -->
+<header class="hero booking-hero">
   <div class="hero-content">
     <h1>Book a Service</h1>
     <p class="tagline">Schedule your premium auto service with ease</p>
   </div>
 </header>
 
+<!-- BOOKING FORM -->
+<section class="about">
+  <h2>Booking Form</h2>
 
-  <!-- BOOKING FORM -->
-  <section class="about">
-    <h2>Booking Form</h2>
-    <form id="booking-form" style="max-width: 600px; margin: 0 auto; text-align: left;">
-      <!-- Name -->
-      <label for="name">Full Name</label><br>
-      <input type="text" id="name" name="name" placeholder="Your full name" required style="width:100%; padding:10px; margin-bottom:15px;"><br>
+  <form id="booking-form" style="max-width:600px;margin:0 auto;">
 
-      <!-- Email -->
-      <label for="email">Email</label><br>
-      <input type="email" id="email" name="email" placeholder="Your email address" required style="width:100%; padding:10px; margin-bottom:15px;"><br>
+    <!-- Name -->
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required placeholder="Your full name">
 
-      <!-- Service Type -->
-<label for="service">Select Service</label><br>
-<select id="service" name="service" required style="width:100%; padding:10px; margin-bottom:10px;">
-  <option value="" disabled selected>Select a service</option>
-  <option value="hand-wash">Premium Hand Wash</option>
-  <option value="detailing">Full Detail</option>
-  <option value="vehicle-service">Vehicle Service</option>
-  <option value="modifications">Modifications</option>
-</select><br>
+    <!-- Email -->
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required placeholder="Your email address">
 
+    <!-- Service -->
+    <label for="service">Select Service</label>
+    <select id="service" name="service" required>
+      <option value="" disabled selected>Select a service</option>
+      <option value="Hand Wash">Premium Hand Wash</option>
+      <option value="Full Detail">Full Detail</option>
+      <option value="Vehicle Service">Vehicle Service</option>
+      <option value="Modifications">Modifications</option>
+    </select>
 
+    <!-- Service Price -->
+    <div id="service-price"
+         style="
+           margin:30px 0 20px;
+           padding:18px;
+           background:#f7f3ec;
+           border:1px solid #e0d8c8;
+           text-align:center;
+           font-family:'Playfair Display', serif;
+           font-size:18px;
+         ">
+      Select a service to see pricing
+    </div>
 
-      </select><br>
+    <!-- Date -->
+    <label for="date">Preferred Date</label>
+    <input type="date" id="date" name="date" required>
 
-      <!-- Preferred Date -->
-      <label for="date">Preferred Date</label><br>
-      <input type="date" id="date" name="date" required style="width:100%; padding:10px; margin-bottom:15px;"><br>
+    <!-- Time -->
+    <label for="time">Preferred Time</label>
+    <input type="time" id="time" name="time" required>
 
-      <!-- Preferred Time -->
-      <label for="time">Preferred Time</label><br>
-      <input type="time" id="time" name="time" required style="width:100%; padding:10px; margin-bottom:15px;"><br>
+    <!-- Notes -->
+    <label for="notes">Additional Notes</label>
+    <textarea id="notes" name="notes" rows="4" placeholder="Any special requests?"></textarea>
 
-      <!-- Notes -->
-      <label for="notes">Additional Notes</label><br>
-      <textarea id="notes" name="notes" rows="4" placeholder="Any special requests?" style="width:100%; padding:10px; margin-bottom:20px;"></textarea><br>
+    <!-- Submit -->
+    <div style="text-align:center;margin-top:30px;">
+      <button type="submit" class="cta-button booking-button">
+        Submit Booking
+      </button>
+    </div>
 
-      <!-- Submit Button -->
-      <div class="booking-footer">
+  </form>
+</section>
 
-  <div class="service-price" id="servicePrice">
-    <span>Service Price</span>
-    <strong>Coming Soon</strong>
-  </div>
-
-</div>
-<div style="text-align: center; margin-top: 30px;">
-  <button type="submit" class="cta-button booking-button">
-    Submit Booking
-  </button>
-</div>
-
-    </form>
-  </section>
-
-  <!-- SCRIPTS -->
-
-  <script src="script.js"></script>
+<!-- SCRIPT -->
+<script src="script.js"></script>
 
 </body>
 </html>
