@@ -746,3 +746,57 @@ html {
 .booking-button:hover {
   background-color: #555;
 }
+/* Pill-style inputs and selects */
+.pill-input {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  margin-bottom: 15px;
+  border-radius: 50px;
+  border: 1px solid #ccc;
+  font-family: 'PT Serif', serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Service Price Pill */
+.service-price {
+  display: inline-block;
+  padding: 12px 32px;
+  margin: 20px 0;
+  background-color: #f7f3ec;
+  border: 1px solid #e0d8c8;
+  border-radius: 50px;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  min-width: 150px;
+  text-align: center;
+}
+
+.price-number {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  margin-left: 8px;
+}
+
+/* Submit Button */
+.booking-button {
+  display: inline-block;
+  padding: 14px 32px;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #d4af37; /* gold */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.booking-button:hover {
+  background-color: #800020; /* wine-red */
+}

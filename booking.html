@@ -8,27 +8,26 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="important.css">
 
   <!-- Favicon -->
   <link rel="icon" href="Favicon.png" type="image/png">
-
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar">
-  <a href="index.html" class="navbar-logo">
+  <a href="#" class="navbar-logo">
     <img src="Favicon.png" alt="Stradale Auto Club Logo" class="logo">
     Stradale Auto Club
   </a>
 
   <div class="hamburger" id="hamburger">
-    <div></div><div></div><div></div>
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
 
   <ul class="nav-links" id="nav-links">
@@ -40,7 +39,7 @@
   </ul>
 </nav>
 
-<!-- HERO -->
+<!-- HERO SECTION -->
 <header class="hero booking-hero">
   <div class="hero-content">
     <h1>Book a Service</h1>
@@ -51,65 +50,67 @@
 <!-- BOOKING FORM -->
 <section class="about">
   <h2>Booking Form</h2>
-  <form id="booking-form">
+  <form id="booking-form" style="max-width: 600px; margin: 40px auto; text-align: left;">
     <!-- Name -->
     <label for="name">Full Name</label><br>
-    <input type="text" id="name" name="name" placeholder="Your full name" required style="width:100%; padding:10px; margin-bottom:15px;"><br>
+    <input type="text" id="name" name="name" placeholder="Your full name" required class="pill-input"><br>
 
     <!-- Email -->
     <label for="email">Email</label><br>
-    <input type="email" id="email" name="email" placeholder="Your email address" required style="width:100%; padding:10px; margin-bottom:15px;"><br>
+    <input type="email" id="email" name="email" placeholder="Your email address" required class="pill-input"><br>
 
     <!-- Service Type -->
     <label for="service">Select Service</label><br>
-    <select id="service" name="service" required style="width:100%; padding:10px; margin-bottom:20px;">
+    <select id="service" name="service" required class="pill-input">
       <option value="" disabled selected>Select a service</option>
-      <option value="Hand Wash">Premium Hand Wash</option>
-      <option value="Full Detail">Full Detail</option>
-      <option value="Vehicle Service">Vehicle Service</option>
-      <option value="Modifications">Modifications</option>
+      <option value="hand-wash">Premium Hand Wash</option>
+      <option value="detailing">Full Detail</option>
+      <option value="vehicle-service">Vehicle Service</option>
+      <option value="modifications">Modifications</option>
     </select><br>
 
     <!-- Preferred Date -->
     <label for="date">Preferred Date</label><br>
-    <input type="date" id="date" name="date" required style="width:100%; padding:10px; margin-bottom:15px;"><br>
+    <input type="date" id="date" name="date" required class="pill-input"><br>
 
     <!-- Preferred Time -->
     <label for="time">Preferred Time</label><br>
-    <input type="time" id="time" name="time" required style="width:100%; padding:10px; margin-bottom:15px;"><br>
+    <input type="time" id="time" name="time" required class="pill-input"><br>
 
     <!-- Notes -->
     <label for="notes">Additional Notes</label><br>
-    <textarea id="notes" name="notes" rows="4" placeholder="Any special requests?" style="width:100%; padding:10px; margin-bottom:20px;"></textarea><br>
+    <textarea id="notes" name="notes" rows="4" placeholder="Any special requests?" class="pill-input"></textarea><br>
 
-    <!-- Service Price -->
-    <div id="service-price">
-      Select a service to see pricing
+    <!-- Service Price Display -->
+    <div id="service-price" class="service-price">
+      <span>Price:</span> <span class="price-number">—</span>
     </div>
 
     <!-- Submit Button -->
-    <button type="submit" class="booking-button">Submit Booking</button>
+    <div style="text-align: center; margin-top: 20px;">
+      <button type="submit" class="booking-button">Submit Booking</button>
+    </div>
   </form>
 </section>
 
 <!-- SCRIPTS -->
 <script src="script.js"></script>
 <script>
-  // Service Price Update
+  // Dynamic Service Price
   const serviceSelect = document.getElementById('service');
-  const priceBox = document.getElementById('service-price');
+  const priceNumber = document.querySelector('#service-price .price-number');
 
-  if (serviceSelect && priceBox) {
-    serviceSelect.addEventListener('change', () => {
-      let serviceText = '';
-      if (serviceSelect.value === 'Hand Wash') {
-        serviceText = `Premium Hand Wash <span class="price-number">$35</span>`;
-      } else {
-        serviceText = `${serviceSelect.value} <span class="price-number">Coming Soon</span>`;
-      }
-      priceBox.innerHTML = serviceText;
-    });
-  }
+  const servicePrices = {
+    "hand-wash": "$35",
+    "detailing": "Coming Soon",
+    "vehicle-service": "Coming Soon",
+    "modifications": "Coming Soon"
+  };
+
+  serviceSelect.addEventListener('change', () => {
+    const value = serviceSelect.value;
+    priceNumber.textContent = servicePrices[value] || "—";
+  });
 </script>
 
 </body>
