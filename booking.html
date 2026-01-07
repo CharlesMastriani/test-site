@@ -8,13 +8,71 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="important.css">
 
   <!-- Favicon -->
   <link rel="icon" href="Favicon.png" type="image/png">
+
+  <style>
+    /* Center price box and pill style */
+    #service-price {
+      display: inline-block;
+      padding: 10px 25px;
+      background-color: #F5F0E6; /* Cream background */
+      border-radius: 50px;
+      font-weight: bold;
+      text-align: center;
+      margin: 20px 0;
+      min-width: 140px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    #service-price span.price-number {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-left: 5px;
+    }
+
+    /* Center submit button and style */
+    .booking-button {
+      display: block;
+      margin: 0 auto;
+      background-color: #C6A664;
+      color: #fff;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .booking-button:hover {
+      background-color: #800020; /* Wine red */
+    }
+
+    /* Restore pill style to all inputs and selects */
+    input[type="text"], input[type="email"], input[type="date"], input[type="time"], textarea, select {
+      border-radius: 50px;
+      border: 1px solid #ccc;
+      padding: 12px 20px;
+      width: 100%;
+      margin-bottom: 15px;
+      font-family: 'PT Serif', serif;
+      box-sizing: border-box;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+    }
+  </style>
 </head>
 <body>
 
@@ -50,68 +108,55 @@
 <!-- BOOKING FORM -->
 <section class="about">
   <h2>Booking Form</h2>
-  <form id="booking-form" style="max-width: 600px; margin: 40px auto; text-align: left;">
+  <form id="booking-form" style="max-width: 600px; margin: 0 auto; text-align: left;">
+
     <!-- Name -->
-    <label for="name">Full Name</label><br>
-    <input type="text" id="name" name="name" placeholder="Your full name" required class="pill-input"><br>
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" placeholder="Your full name" required>
 
     <!-- Email -->
-    <label for="email">Email</label><br>
-    <input type="email" id="email" name="email" placeholder="Your email address" required class="pill-input"><br>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Your email address" required>
 
     <!-- Service Type -->
-    <label for="service">Select Service</label><br>
-    <select id="service" name="service" required class="pill-input">
+    <label for="service">Select Service</label>
+    <select id="service" name="service" required>
       <option value="" disabled selected>Select a service</option>
       <option value="hand-wash">Premium Hand Wash</option>
       <option value="detailing">Full Detail</option>
       <option value="vehicle-service">Vehicle Service</option>
       <option value="modifications">Modifications</option>
-    </select><br>
+    </select>
 
     <!-- Preferred Date -->
-    <label for="date">Preferred Date</label><br>
-    <input type="date" id="date" name="date" required class="pill-input"><br>
+    <label for="date">Preferred Date</label>
+    <input type="date" id="date" name="date" required>
 
     <!-- Preferred Time -->
-    <label for="time">Preferred Time</label><br>
-    <input type="time" id="time" name="time" required class="pill-input"><br>
+    <label for="time">Preferred Time</label>
+    <input type="time" id="time" name="time" required>
 
     <!-- Notes -->
-    <label for="notes">Additional Notes</label><br>
-    <textarea id="notes" name="notes" rows="4" placeholder="Any special requests?" class="pill-input"></textarea><br>
+    <label for="notes">Additional Notes</label>
+    <textarea id="notes" name="notes" rows="4" placeholder="Any special requests?"></textarea>
 
-    <!-- Service Price Display -->
-    <div id="service-price" class="service-price">
-      <span>Price:</span> <span class="price-number">—</span>
+    <!-- Service Price -->
+    <div style="text-align: center;">
+      <div id="service-price">
+        <span>Price:</span> <span class="price-number">—</span>
+      </div>
     </div>
 
     <!-- Submit Button -->
     <div style="text-align: center; margin-top: 20px;">
       <button type="submit" class="booking-button">Submit Booking</button>
     </div>
+
   </form>
 </section>
 
 <!-- SCRIPTS -->
 <script src="script.js"></script>
-<script>
-  // Dynamic Service Price
-  const serviceSelect = document.getElementById('service');
-  const priceNumber = document.querySelector('#service-price .price-number');
-
-  const servicePrices = {
-    "hand-wash": "$35",
-    "detailing": "Coming Soon",
-    "vehicle-service": "Coming Soon",
-    "modifications": "Coming Soon"
-  };
-
-  serviceSelect.addEventListener('change', () => {
-    const value = serviceSelect.value;
-    priceNumber.textContent = servicePrices[value] || "—";
-  });
-</script>
 
 </body>
 </html>

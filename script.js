@@ -34,10 +34,7 @@ const logoLink = document.querySelector('.navbar-logo');
 if (logoLink) {
   logoLink.addEventListener('click', function (e) {
     e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
 
@@ -63,59 +60,47 @@ if (modal && modalImg && modalClose) {
     document.body.style.overflow = '';
   }
 
-  // Close X
   modalClose.addEventListener('click', closeModal);
 
-  // Click outside content wrapper
   modal.addEventListener('click', e => {
     if (e.target === modal) closeModal();
   });
 
-  // Escape key
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeModal();
   });
 }
 
-
-// ===== Booking Form Submission (if present) =====
+// ===== Booking Form Submission =====
 const bookingForm = document.getElementById('booking-form');
 
 if (bookingForm) {
   bookingForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    // Replace this alert with your actual form submission logic
     alert('Booking submitted successfully!');
     bookingForm.reset();
+
+    // Reset price display to default
+    const priceBox = document.getElementById('service-price');
+    if (priceBox) priceBox.innerHTML = `<span>Price:</span> <span class="price-number">—</span>`;
   });
 }
+
 // ===== Booking Service Price Logic =====
-const priceDisplay = document.getElementById('service-price');
-
-if (serviceSelect && priceDisplay) {
-  const servicePrices = {
-    "Hand Wash": "$35",
-    "Full Detail": "Coming Soon",
-    "Vehicle Service": "Coming Soon",
-    "Modifications": "Coming Soon"
-  };
-
-  serviceSelect.addEventListener('change', () => {
-    const selectedService = serviceSelect.value;
-    priceDisplay.textContent = servicePrices[selectedService] || "—";
-  });
-}
 const serviceSelect = document.getElementById('service');
 const priceBox = document.getElementById('service-price');
 
 if (serviceSelect && priceBox) {
+  const servicePrices = {
+    "hand-wash": "$35",
+    "detailing": "Coming Soon",
+    "vehicle-service": "Coming Soon",
+    "modifications": "Coming Soon"
+  };
+
   serviceSelect.addEventListener('change', () => {
-    let serviceText = '';
-    if (serviceSelect.value === 'Hand Wash') {
-      serviceText = `Premium Hand Wash <span class="price-number">$35</span>`;
-    } else {
-      serviceText = `${serviceSelect.value} <span class="price-number">Coming Soon</span>`;
-    }
-    priceBox.innerHTML = serviceText;
+    const value = serviceSelect.value;
+    const priceText = servicePrices[value] || "—";
+    priceBox.innerHTML = `<span>Price:</span> <span class="price-number">${priceText}</span>`;
   });
 }
