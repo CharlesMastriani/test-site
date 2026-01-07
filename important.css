@@ -820,3 +820,27 @@ html {
   box-shadow: 0 2px 8px rgba(198,166,100,0.3);
   outline: none;           /* remove default focus outline */
 }
+.social-footer {
+    text-align: center;
+    margin: 40px 0 20px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.social-footer a {
+    text-decoration: none;
+    margin: 0 15px;
+    transition: all 0.2s ease;
+}
+
+.social-footer a svg {
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    fill: #C6A664; /* gold color */
+    transition: fill 0.2s ease;
+}
+
+.social-footer a:hover svg {
+    fill: #800020; /* wine-red hover color */
+}
