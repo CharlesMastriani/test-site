@@ -849,4 +849,13 @@ html {
     fill: #fff;                  /* hover color */
     transform: scale(1.2);       /* subtle zoom effect */
 }
+.full-width-input {
+  width: 100%;
+  border-radius: 50px;
+  border: 1px solid #ccc;
+  padding: 12px 20px;
+  font-family: 'PT Serif', serif;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
 
