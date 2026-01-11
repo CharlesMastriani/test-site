@@ -857,5 +857,18 @@ html {
   font-family: 'PT Serif', serif;
   box-sizing: border-box;
   margin-bottom: 15px;
+
+  /* Fix dropdown appearance */
+  height: 50px; /* matches other inputs */
+  -webkit-appearance: none; /* remove default arrow styling (WebKit) */
+  -moz-appearance: none;    /* remove default arrow styling (Firefox) */
+  appearance: none;         /* remove default arrow styling */
+  background-color: #fff;   /* ensures background matches inputs */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23333' stroke-width='2' d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); /* custom arrow */
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 12px 12px;
+  padding-right: 40px; /* make room for the arrow */
 }
+
 
