@@ -75,15 +75,14 @@ if (modal && modalImg && modalClose) {
 const bookingForm = document.getElementById('booking-form');
 
 if (bookingForm) {
-  bookingForm.addEventListener('submit', function (e) {
-    alert('Booking submitted successfully!');
-    bookingForm.reset();
-
-    // Reset price display to default
+  bookingForm.addEventListener('submit', function () {
     const priceBox = document.getElementById('service-price');
-    if (priceBox) priceBox.innerHTML = `<span>Price:</span> <span class="price-number">—</span>`;
+    if (priceBox) {
+      priceBox.innerHTML = `<span>Price:</span> <span class="price-number">—</span>`;
+    }
   });
 }
+
 
 // ===== Booking Service Price Logic =====
 const serviceSelect = document.getElementById('service');
