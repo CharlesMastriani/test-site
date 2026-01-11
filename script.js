@@ -1,4 +1,6 @@
-// ===== Hamburger Toggle =====
+// =====================
+// HAMBURGER MENU TOGGLE
+// =====================
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 
@@ -8,7 +10,9 @@ if (hamburger && navLinks) {
   });
 }
 
-// ===== Smooth Gliding Navbar =====
+// =====================
+// SMOOTH GLIDING NAVBAR
+// =====================
 const navbar = document.querySelector('.navbar');
 
 if (navbar) {
@@ -18,17 +22,17 @@ if (navbar) {
   function updateNavbar() {
     const scrollY = window.scrollY;
     const targetTop = startTop + scrollY;
-
     currentTop += (targetTop - currentTop) * 0.25;
     navbar.style.top = `${currentTop}px`;
-
     requestAnimationFrame(updateNavbar);
   }
 
   requestAnimationFrame(updateNavbar);
 }
 
-// ===== Scroll to Top on Logo Click =====
+// =====================
+// SCROLL TO TOP ON LOGO CLICK
+// =====================
 const logoLink = document.querySelector('.navbar-logo');
 
 if (logoLink) {
@@ -38,7 +42,9 @@ if (logoLink) {
   });
 }
 
-// ===== Gallery Click-to-Expand Modal =====
+// =====================
+// GALLERY CLICK-TO-EXPAND MODAL
+// =====================
 const modal = document.getElementById('imageModal');
 const modalImg = document.getElementById('modalImage');
 const modalClose = document.getElementById('modalClose');
@@ -46,19 +52,21 @@ const modalClose = document.getElementById('modalClose');
 if (modal && modalImg && modalClose) {
   const galleryImages = document.querySelectorAll('.gallery-grid img');
 
-  galleryImages.forEach(img => {
-    img.addEventListener('click', () => {
-      modal.classList.add('active');
-      modalImg.src = img.src;
-      document.body.style.overflow = 'hidden';
-    });
-  });
+  const openModal = (img) => {
+    modal.classList.add('active');
+    modalImg.src = img.src;
+    document.body.style.overflow = 'hidden';
+  };
 
-  function closeModal() {
+  const closeModal = () => {
     modal.classList.remove('active');
     modalImg.src = '';
     document.body.style.overflow = '';
-  }
+  };
+
+  galleryImages.forEach(img => {
+    img.addEventListener('click', () => openModal(img));
+  });
 
   modalClose.addEventListener('click', closeModal);
 
@@ -71,7 +79,9 @@ if (modal && modalImg && modalClose) {
   });
 }
 
-// ===== Booking Form Submission =====
+// =====================
+// BOOKING FORM SUBMISSION
+// =====================
 const bookingForm = document.getElementById('booking-form');
 
 if (bookingForm) {
@@ -83,19 +93,19 @@ if (bookingForm) {
   });
 }
 
-
-// ===== Booking Service Price Logic =====
+// =====================
+// BOOKING SERVICE PRICE LOGIC
+// =====================
 const serviceSelect = document.getElementById('service');
 const priceBox = document.getElementById('service-price');
 
 if (serviceSelect && priceBox) {
   const servicePrices = {
-  "Premium Hand Wash": "$35",
-  "Full Detail": "Coming Soon",
-  "Vehicle Service": "Coming Soon",
-  "Modifications": "Coming Soon"
-};
-
+    "Premium Hand Wash": "$35",
+    "Full Detail": "Coming Soon",
+    "Vehicle Service": "Coming Soon",
+    "Modifications": "Coming Soon"
+  };
 
   serviceSelect.addEventListener('change', () => {
     const value = serviceSelect.value;

@@ -16,6 +16,7 @@
   <!-- Favicon -->
   <link rel="icon" href="Favicon.png" type="image/png">
 
+  <!-- Inline Styles (price box + form inputs) -->
   <style>
     #service-price {
       display: inline-block;
@@ -74,95 +75,101 @@
       margin-bottom: 5px;
       display: block;
     }
+
+    /* Ensure state select box is full width */
+    .full-width-input {
+      width: 100%;
+    }
   </style>
 </head>
 
 <body>
 
-<nav class="navbar">
-  <a href="#" class="navbar-logo">
-    <img src="Favicon.png" alt="Stradale Auto Club Logo" class="logo">
-    Stradale Auto Club
-  </a>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="#" class="navbar-logo">
+      <img src="Favicon.png" alt="Stradale Auto Club Logo" class="logo">
+      Stradale Auto Club
+    </a>
 
-  <div class="hamburger" id="hamburger">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
 
-  <ul class="nav-links" id="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="booking.html">Book</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="our-services.html">Our Services</a></li>
-  </ul>
-</nav>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="booking.html">Book</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="our-services.html">Our Services</a></li>
+    </ul>
+  </nav>
 
-<header class="hero booking-hero">
-  <div class="hero-content">
-    <h1>Book a Service</h1>
-    <p class="tagline">Schedule your premium auto service with ease</p>
-  </div>
-</header>
+  <!-- HERO -->
+  <header class="hero booking-hero">
+    <div class="hero-content">
+      <h1>Book a Service</h1>
+      <p class="tagline">Schedule your premium auto service with ease</p>
+    </div>
+  </header>
 
-<section class="about">
-  <h2>Booking Form</h2>
+  <!-- BOOKING FORM -->
+  <section class="about">
+    <h2>Booking Form</h2>
 
-  <!-- IMPORTANT:
-       Replace the action URL below with your Formspree endpoint -->
-  <form
-  id="booking-form"
-  action="https://formspree.io/f/mykkgqvw"
-  method="POST"
->
+    <form id="booking-form" action="https://formspree.io/f/mykkgqvw" method="POST">
+      
+      <label for="name">Full Name *</label>
+      <input type="text" id="name" name="name" required>
 
-  <label for="name">Full Name *</label>
-  <input type="text" id="name" name="name" required>
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" required>
 
-  <label for="email">Email *</label>
-  <input type="email" id="email" name="email" required>
+      <label for="service">Select Service *</label>
+      <select id="service" name="service" required>
+        <option value="" disabled>Select a service</option>
+        <option value="Premium Hand Wash">Premium Hand Wash</option>
+        <option value="Full Detail">Full Detail</option>
+        <option value="Vehicle Service">Vehicle Service</option>
+        <option value="Modifications">Modifications</option>
+      </select>
 
-<label for="service">Select Service *</label>
-<select id="service" name="service" required>
-  <option value="" disabled>Select a service</option>
-  <option value="Premium Hand Wash">Premium Hand Wash</option>
-  <option value="Full Detail">Full Detail</option>
-  <option value="Vehicle Service">Vehicle Service</option>
-  <option value="Modifications">Modifications</option>
-</select>
+      <!-- PRICE BOX -->
+      <div id="service-price">
+        <span>Price:</span> <span class="price-number">—</span>
+      </div>
 
+      <label for="date">Preferred Date *</label>
+      <input type="date" id="date" name="date" required>
 
-  <label for="date">Preferred Date *</label>
-  <input type="date" id="date" name="date" required>
+      <label for="time">Preferred Time *</label>
+      <input type="time" id="time" name="time" required>
 
-  <label for="time">Preferred Time *</label>
-  <input type="time" id="time" name="time" required>
+      <label for="street">Street Address *</label>
+      <input type="text" id="street" name="street" required>
 
-  <label for="street">Street Address *</label>
-  <input type="text" id="street" name="street" required>
+      <label for="city">City *</label>
+      <input type="text" id="city" name="city" required>
 
-  <label for="city">City *</label>
-  <input type="text" id="city" name="city" required>
+      <label for="state">State *</label>
+      <select id="state" name="state" class="full-width-input" required>
+        <option value="Connecticut" selected>Connecticut</option>
+      </select>
 
- <label for="state">State *</label>
-<select id="state" name="state" class="full-width-input" required>
-  <option value="Connecticut" selected>Connecticut</option>
-</select>
-  <label for="zip">ZIP Code *</label>
-  <input type="text" id="zip" name="zip" required>
+      <label for="zip">ZIP Code *</label>
+      <input type="text" id="zip" name="zip" required>
 
-  <label for="notes">Additional Notes </label>
-  <textarea id="notes" name="notes"></textarea>
+      <label for="notes">Additional Notes</label>
+      <textarea id="notes" name="notes"></textarea>
 
-  <button type="submit" class="booking-button">
-    Submit Booking
-  </button>
-</form>
+      <button type="submit" class="booking-button">Submit Booking</button>
+    </form>
+  </section>
 
-</section>
+  <!-- SCRIPTS -->
+  <script src="script.js"></script>
 
-<script src="script.js"></script>
 </body>
 </html>
