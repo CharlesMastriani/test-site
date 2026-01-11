@@ -76,7 +76,6 @@ const bookingForm = document.getElementById('booking-form');
 
 if (bookingForm) {
   bookingForm.addEventListener('submit', function (e) {
-    e.preventDefault();
     alert('Booking submitted successfully!');
     bookingForm.reset();
 
@@ -92,11 +91,12 @@ const priceBox = document.getElementById('service-price');
 
 if (serviceSelect && priceBox) {
   const servicePrices = {
-    "hand-wash": "$35",
-    "detailing": "Coming Soon",
-    "vehicle-service": "Coming Soon",
-    "modifications": "Coming Soon"
-  };
+  "Premium Hand Wash": "$35",
+  "Full Detail": "Coming Soon",
+  "Vehicle Service": "Coming Soon",
+  "Modifications": "Coming Soon"
+};
+
 
   serviceSelect.addEventListener('change', () => {
     const value = serviceSelect.value;
