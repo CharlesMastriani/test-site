@@ -583,3 +583,9 @@ html { scroll-behavior: smooth; }
   .services-grid { grid-template-columns: 1fr; }
   .gallery-grid { grid-template-columns: 1fr; }
 }
+/* Force YouTube icon to match Instagram size and color */
+.social-fixed a.youtube svg {
+  width: 24px;
+  height: 24px;
+  fill: #C6A664;
+}
