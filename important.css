@@ -597,4 +597,8 @@ html { scroll-behavior: smooth; }
   fill: #fff;
   transform: scale(1.2);
 }
+.youtube-link:hover svg {
+  fill: #fff;
+  transform: scale(1.2);
+}
 
