@@ -589,3 +589,12 @@ html { scroll-behavior: smooth; }
   height: 24px;
   fill: #C6A664;
 }
+.social-fixed a {
+  color: #C6A664;
+}
+
+.social-fixed a svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
