@@ -589,13 +589,14 @@ html { scroll-behavior: smooth; }
 .youtube-link svg {
   width: 40px;
   height: 40px;
-  fill: #C6A664; /* gold color by default */
+  fill: #C6A664 !important; /* default gold */
   transition: fill 0.2s ease, transform 0.2s ease;
 }
 
 .youtube-link:hover svg {
-  fill: #fff;      /* turn white on hover */
-  transform: scale(1.2);  /* slightly enlarge on hover */
+  fill: #fff !important;      /* turn white on hover */
+  transform: scale(1.2);      /* enlarge on hover */
 }
+
 
 
